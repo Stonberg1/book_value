@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 import sys
 from pathlib import Path
 from typing import Any, Dict
@@ -90,6 +91,13 @@ def main() -> None:
     scored_df = compute_scores(data_df=fetched_df, config=config)
     screened_df = run_screen(scored_df=scored_df, config=config)
     build_reports(screened_df=screened_df, config=config, base_dir=base_dir)
+
+    docs_dir = base_dir.parent / "docs"
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    for report_name in ("index.html", "scores_table.html"):
+        src = base_dir / "reports" / report_name
+        if src.exists():
+            shutil.copy2(src, docs_dir / report_name)
 
     print_summary(screened_df)
 
