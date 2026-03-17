@@ -1,8 +1,6 @@
 name: Daily Blue Chip Screener
 
 on:
-  schedule:
-    - cron: "30 11 * * *"
   workflow_dispatch:
 
 permissions:
