@@ -1,0 +1,18 @@
+lookback_months: 12
+top_n: 20
+min_blue_chip_score: 50
+blue_chip_weight: 0.70
+value_weight: 0.30
+dividend_streak_cap: 25  # Large-cap S&P 500 context: reward up to 25 consecutive years of dividends.
+score_weights:
+  market_cap: 0.30
+  dividend_streak: 0.25
+  financial_stability: 0.25
+  sp500_tenure: 0.20
+cache_ttl_hours: 24
+universe_cache_days: 7
+exclude_prolonged_discounts: false
+max_discount_days: 365
+excluded_sectors:
+  - Financials
+  - Real Estate

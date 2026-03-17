@@ -1,0 +1,5 @@
+data/cache/
+data/sp500_universe.csv
+__pycache__/
+*.pyc
+.env
